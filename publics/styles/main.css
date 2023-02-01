@@ -1,0 +1,396 @@
+* {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Whitney", helvetica, sans-serif;
+  background-color: #000000;
+}
+::selection {
+  background-color: #5900ff;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #20232400;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #727272;
+  border-radius: 20px;
+}
+
+/* ---------------------------------------------------------------- */
+/* HEADER */
+
+/* HEADER logo and sign */
+
+.logo {
+  position: absolute;
+  left: 10%;
+  top: 32px;
+}
+.logo img {
+  width: 150px;
+  cursor: pointer;
+}
+.sign {
+  position: absolute;
+  top: 36px;
+  right: 10%;
+  font-size: 25px;
+  font-weight: 650;
+}
+.sign a {
+  color: #ffffff;
+  transition: all 0.3s;
+}
+.sign a::after {
+  content: "";
+  width: 0%;
+  height: 4px;
+  background: #ffffff;
+  display: block;
+  margin: auto;
+  transition: 0.3s;
+}
+.sign a:hover::after {
+  width: 100%;
+}
+.sign-icon {
+  display: none;
+}
+.navlinks {
+  display: flex;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.navlinks ul {
+  display: flex;
+}
+.navlinks li {
+  margin-inline: 20px;
+}
+.navlinks a {
+  font-size: 23px;
+  font-weight: 650;
+  color: #fff;
+}
+.navlinks ul li::after {
+  content: "";
+  width: 0%;
+  height: 4px;
+  background: #ffffff;
+  display: block;
+  margin: auto;
+  transition: 0.3s;
+}
+.navlinks ul li:hover::after {
+  width: 100%;
+}
+
+/* HEADER menu hamburger */
+
+.menu-hamburger {
+  visibility: hidden;
+}
+/* HEADER cross */
+.cross {
+  visibility: hidden;
+}
+
+/* ---------------------------------------------------------------- */
+/* SHORTCUT */
+
+.shortcut-container {
+  margin: 0;
+  width: 50px;
+  position: fixed;
+  top: 50%;
+  left: 2%;
+  transform: translate(-50%, -50%);
+}
+.shortcut {
+  display: block;
+}
+.shortcut li {
+  margin: -8px 0;
+}
+.shortcut img {
+  width: 40px;
+  transition: all 0.03s;
+}
+.shortcut img:hover {
+  padding-left: 5px;
+  transition: all 0.03s;
+}
+
+/* ---------------------------------------------------------------- */
+/* UPDATE */
+
+.update {
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+/* ---------------------------------------------------------------- */
+/* ANIMATION */
+
+@keyframes anim8 {
+  0% {
+    right: -200%;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes anim9 {
+  0% {
+    padding-left: 0%;
+  }
+  100% {
+    padding-left: 60%;
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* FONT FACE */
+
+@font-face {
+  font-family: "Whitney";
+  src: url("../assets/fonts/Whitney-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alliance No.1";
+  src: url("../assets/fonts/AllianceNo1-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alliance No.2";
+  src: url("../assets/fonts/AllianceNo2-ExtraBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@media screen and (max-width: 1530px) {
+  .shortcut-container {
+    left: 2.5%;
+  }
+}
+@media screen and (max-width: 900px) {
+  body {
+    overflow-x: hidden;
+  }
+  /* Logo and Sign */
+
+  .logo {
+    z-index: 3;
+    margin-top: 20px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .logo img {
+    width: 180px;
+  }
+  .sign {
+    visibility: hidden;
+  }
+  .sign-icon {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    display: block;
+  }
+  .sign-icon img {
+    height: 40px;
+  }
+
+  /* Icon Hamburger */
+
+  .menu-hamburger {
+    z-index: 2;
+    visibility: visible;
+    height: 40px;
+    width: unset;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+  }
+  .menuHamburger-active {
+    display: none;
+  }
+  /* Icon Cross */
+
+  .cross {
+    z-index: 2;
+    height: 40px;
+    width: auto;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+    padding-bottom: 20px;
+  }
+  .cross-active {
+    border-bottom: solid 3px #fff;
+    visibility: visible;
+  }
+
+  /* navlinks */
+
+  .navlinks li {
+    margin: 10px 0;
+    margin-inline: 0px;
+  }
+  .navlinks {
+    z-index: 2;
+    text-align: center;
+    display: none;
+    width: unset;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+  .navlinks-active {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: unset;
+    display: block;
+    background-color: #353535;
+    height: 100%;
+    width: 80%;
+    border-radius: 20px 0 0 20px;
+  }
+  .navlinks ul {
+    display: block;
+    text-align: left;
+    position: absolute;
+    top: 18%;
+    left: 18%;
+  }
+  .navlinks {
+    margin-bottom: 20px;
+  }
+  .navlinks a {
+    font-size: 30px;
+  }
+
+  /* Shortcut */
+
+  .shortcut-container {
+    z-index: -1;
+    padding-top: 0;
+    height: auto;
+    width: auto;
+    position: fixed;
+    top: 96%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleX(-1);
+  }
+  .shortcut {
+    display: flex;
+  }
+  .shortcut li {
+    margin: 0;
+  }
+  .shortcut img {
+    transition: none;
+  }
+  .shortcut img:hover {
+    width: 40px;
+    transition: none;
+  }
+
+  .update {
+    z-index: -1;
+    position: fixed;
+    right: 8px;
+    bottom: 5px;
+  }
+  /* ---------------------------------------------------------------- */
+  /* ANIMATION */
+
+  .navlinks-active {
+    animation: anim8 0.25s ease-out forwards;
+  }
+  .cross-active {
+    animation: anim9 0.25s ease-out forwards;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cross {
+    padding-bottom: 20px;
+  }
+  .navlinks ul {
+    left: 10%;
+  }
+}
+@media screen and (max-width: 330px) {
+  /* Logo and Sign */
+
+  .logo img {
+    margin-top: 0px;
+    width: 170px;
+  }
+  .sign-icon {
+    top: 25px;
+    left: 5px;
+  }
+  .sign-icon img {
+    height: 35px;
+  }
+
+  /* Icon Hamburger */
+
+  .menu-hamburger {
+    top: 25px;
+    right: 5px;
+    height: 35px;
+  }
+  /* Icon Cross */
+
+  .cross {
+    z-index: 2;
+    height: 35px;
+    width: auto;
+    top: 25px;
+    right: 5px;
+  }
+  .cross-active {
+    border-bottom: solid 3px #fff;
+    visibility: visible;
+  }
+  .navlinks-active {
+    width: 84%;
+  }
+
+  /* Shortcut */
+  .shortcut img {
+    width: 35px;
+    transition: none;
+  }
+  .shortcut img:hover {
+    width: 35px;
+    transition: none;
+  }
+}
